@@ -1,0 +1,269 @@
+<%- include('partials/header'); -%>
+
+<section class="main-container">
+<div class="main-title">
+    <h1>Hi</h1>
+    <h2>I'm <span>M</span>ohit</h2>
+    <p>web developer</p>
+
+    <div class="contact-btn">
+        <button class="contactme-btn">Contact me!</button>
+    </div>
+
+
+</div>
+
+<div class="A3d-male">
+      
+</div>
+</section>
+<div class="card-heading">
+  <h1>Cards</h1>
+</div>
+<section class="sec-cards">
+<!-- 
+      <div class="card">
+        <div class="image"></div>
+        <div class="content">
+          <a href="#">
+            <span class="title">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </span>
+          </a>
+      
+          <p class="desc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+            dolores, possimus pariatur animi temporibus nesciunt praesentium 
+          </p>
+        </div>
+      </div>
+    </div> -->
+</section>
+
+<section class="my-skills-sec">
+
+<div class="skill-progess-bar">
+  <h1> Programing Skills Progress</h1>
+  <div class="container">
+   <p>HTML</p>
+   <div class="skills html">90%</div>
+ </div>
+ <div class="container">
+   <p>CSS</p>
+   <div class="skills css">80%</div>
+ </div>
+ <div class="container">
+   <p>JavaScript</p>
+   <div class="skills js">70%</div>
+ </div>
+ <div class="container">
+  <p>ReactJs</p>
+  <div class="skills reactjs">65%</div>
+</div>
+<div class="container">
+  <p>DATASTRUCTURE</p>
+  <div class="skills Dsa">60%</div>
+</div>
+</div>
+ <h1 class="title-head">My Journey On Programig languages<span></span></h1>
+<div class="progrmaimg-lang">
+  <div class="code-lang">
+    <div class="rotate">
+      <div class="lang-container">
+        <h2>Html</h2>
+        <div class="html">
+        </div>
+      </div>
+      <div class="lang-container">
+        <h2>Css</h2>
+        <div class="css">
+        </div>
+      </div>
+      <div class="lang-container">
+        <h2>JavaScript</h2>
+        <div class="javascript">
+        </div>
+      </div>
+      <div class="lang-container">
+        <h2>ReactJs</h2>
+        <div class="reactjs">
+        </div>
+      </div>
+      <div class="lang-container">
+          <h2>Sass</h2>
+        <div class="sass">
+        </div>
+      </div>
+      <div class="lang-container">
+         <h2>Bootstrap</h2>
+        <div class="bootstrap">
+        </div>
+      </div>
+
+      <div class="lang-container">
+        <h2>NodeJs</h2>
+        <div class="nodejs">
+        </div>
+      </div>
+      <div class="lang-container">
+        <h2>ExpressJs</h2>
+        <div class="expressjs">
+        </div>
+      </div>
+      <div class="lang-container">
+      <h2>MonogoDb</h2>
+
+      <div class="monogodb">
+      </div>
+      </div>
+      <div class="lang-container">
+        <h2>ComingSoon</h2>
+        <div class="coming-soon">
+        </div>
+      </div>
+      <div class="lang-container">
+        <h2>ComingSoon</h2>
+        <div class="coming-soon">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="infomartion">
+  <div class="contact-info">
+   <p><span><i class="fa-regular fa-address-card"></i></span>#267 vasant vihar phase-1 dhakoli zirakpur punjab</p>
+   <p><span><i class="fa-regular fa-envelope"></i></span>mk3705200@gmail.com</p>
+   <p><span><i class="fa-solid fa-square-phone"></i></span>+917986104250</p>
+   <p><span><i class="fa-solid fa-square-phone"></i></span>+917508626324</p>
+   <p><span><i class="fa-solid fa-globe"></i></span>https://responsivewebproject.netlify.app</p>
+     <h2>Follow Me</h2>
+     <span><i class="fa-brands fa-facebook"></i></span> 
+     <span><i class="fa-brands fa-square-instagram"></i></span> 
+     <span><i class="fa-brands fa-github"></i></span> 
+     <span><i class="fa-brands fa-square-x-twitter"></i></span>
+  </div>
+
+
+
+  <div class="contact-form">
+    <form class="form">
+      <div class="title">Contact us</div>
+      <input type="text" placeholder="Your email" class="input">
+      <textarea placeholder="Your message"></textarea>
+       
+      <button>Submit</button>
+  </form>
+  </div>
+</section>
+
+
+<script>
+const cardInfo = [
+    {
+         imgUrl:'#',
+         title : 'Data Structure',
+         description: 'Data Structure is a systematic way to organize data in order to use it efficiently. Following terms are the foundation terms of a data structure.',
+     },
+     {
+         imgUrl:'#',
+         title : 'Java Developer',
+         description: 'Some responsibilities of a Java Developer include designing, planning, developing, and managing Java-based software and applications.',
+     },
+     {
+         imgUrl:'#',
+         title : 'Web Developer',
+         description: ' Web developers build and maintain websites and web applications using programming, design tools and languages such as HTML, CSS, Python and JavaScript to meet both client and end-user needs',
+     },
+    
+    ];
+
+    
+    const sectionContainer = document.querySelector('.sec-cards')
+    const cardFunction = (imgUrlValue, titleValue, descriptionValue)=>{
+      // create elemnet
+      const card =document.createElement('div');
+      card.classList.add('card');
+
+
+      const cardImg=document.createElement('div');
+      cardImg.classList.add('image');
+
+      const contentCard = document.createElement('div');
+      contentCard.classList.add('content');
+
+      const a =document.createElement('a');
+      a.setAttribute('href', imgUrlValue);
+
+      const span = document.createElement('span');
+      span.classList.add('title');
+      span.innerHTML=titleValue;
+
+      const p = document.createElement('p');
+      p.classList.add('desc');
+      p.innerHTML=descriptionValue;
+
+      // apppen child 
+
+      sectionContainer.appendChild(card);
+      card.appendChild(cardImg);
+
+      contentCard.appendChild(a);
+      a.appendChild(span);
+      card.appendChild(a)
+      card.appendChild(p)
+
+    }
+
+    const genreate = ()=>{
+      cardInfo.forEach((e)=>{
+        cardFunction(e.imgUrl,e.title,e.description)
+      })
+    }
+
+    genreate();
+
+
+    // chart 
+//     const xValues = ["CSS", "HTML", "JAVASCRIPT", "REACT", "DATASTRUCTURE"];
+// const yValues = [75, 70,70 ,50, 70,];
+// const barColors = [
+//   "#F27BBD",
+//   "#874CCC",
+//   "#C65BCF",
+//   "#640D6B",
+//   "#10439F",
+// ];
+
+// new Chart("myChart", {
+//   type: "doughnut",
+//   data: {
+//     labels: xValues,
+//     datasets: [{
+//       backgroundColor: barColors,
+//       data: yValues
+//     }]
+//   },
+//   options: {
+//     title: {
+//       display: true,
+//       text: "Programing Skills",
+//     }
+//   }
+// });
+
+
+// nav
+
+const navList =document.querySelector('.list');
+
+const toggle=document.querySelector('.toggle');
+
+
+toggle.addEventListener('click',()=>{
+  navList.classList.toggle('slide');
+})
+</script>
+
+<%- include('partials/footer'); -%>

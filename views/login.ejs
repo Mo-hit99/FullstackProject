@@ -1,0 +1,68 @@
+
+<%- include('partials/header'); -%>
+<div class="main-container-login">
+    <div class="img-container">
+        
+    </div>
+    <div  class="form-container">
+        <form>
+            <div class="form-shadow">
+                <h1>Login</h1>
+                <label class="input-title" for="email">Email</label>
+                <input class="input-value" type="text" name="email" placeholder="Enter the Email" required>
+                <div class="email error" ></div>
+                <label class="input-title" for="password">password</label>
+                <input class="input-value" type="password" name="password" placeholder="Enter the password" required>
+                <div class="password error" ></div>
+                <button class="login-btn">Login</button>
+                <div class="create-acc">
+                    <p>Don't have an account yet?
+                    <a href="signup">SignUp</a></p>
+                </div>
+            </div>   
+        </form>
+    </div>
+</div>
+<script>
+   const form = document.querySelector('form');
+   const emailError=document.querySelector('.email.error');
+    const passwordError=document.querySelector('.password.error');
+
+   form.addEventListener('submit', async (e)=>{
+         e.preventDefault();
+         // rest error
+         emailError.textContent='';
+         passwordError.textContent='';
+
+       // get the value
+       const email= form.email.value;
+       const password =form.password.value;
+
+         try {
+            const res = await fetch('/login',{
+                method:'POST',
+                body:JSON.stringify({email,password}),
+                headers:{'Content-Type':'application/json'}
+            });
+            const data = await res.json();
+            console.log(data);
+
+            //
+            if(data.errors){
+                emailError.textContent =data.errors.email;
+                passwordError.textContent=data.errors.password;
+               }
+            //
+
+            if(data.User){
+                location.assign('/')
+            }
+         } catch (error) {
+            console.log(error);
+         }
+   })
+
+
+
+</script>
+<%- include('partials/footer.ejs'); -%>
